@@ -30,4 +30,4 @@ while True:
         result = num1 ** num2
         print(result)
     else:
-        print("нет решения")
+        print("нет решения") 
