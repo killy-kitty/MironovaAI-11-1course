@@ -6,9 +6,9 @@ def show_menu():
     print("5 - Найти книгу")
     print("6 - Статистика")
     print("0 - Выход")
-    
+
 def add_book(books):
-    name = input("Название книги: ").strip
+    name = input("Название книги: ").strip()
     if  name == "":
         print("Ошибка, нет названия")
     else:
@@ -26,7 +26,7 @@ def last_five_books(books):
 def edit_book(books):
     number = int(input("Номер книги: "))
     if 0 < number <= len(books):
-        books[number - 1] = input("Новое название: ")
+        books[number - 1] = input("Новое название: ").strip()
         print("Книга изменена")
     else:
             print("Такой книги нет")
@@ -35,12 +35,13 @@ def find_book(books):
     word = input("Введите слово для поиска: ").lower()
     for book in books:
         if word in book.lower():
-            print(book)
+            print("Найденная книга: ", book)
+
 def statistics(books):
     print("Всего книг: ", len(books))
     if len(books) > 0:
-        print("Первая книга:", books[0])
-        print("Последняя книга:", books[-1])
+        print("Первая книга: ", books[0])
+        print("Последняя книга: ", books[-1])
 
 def main():
     print("----------------------------")
@@ -70,5 +71,3 @@ while True:
         statistics(books)
     else:
         print("Неверный пункт")
-
-main()
